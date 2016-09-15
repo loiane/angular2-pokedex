@@ -1,0 +1,13 @@
+<div class="card-panel grey lighten-5 z-depth-1">
+  <app-pokemon-header [pokemon]="pokemon"></app-pokemon-header>
+  <a [routerLink]="['/pokemon',  pokemon.id ]">
+    <app-pokemon-image [pokemon]="pokemon"></app-pokemon-image>
+  </a>
+  <div *ngIf="this.pokemon.types" class="types">
+    <div *ngFor="let type of this.pokemon.types"
+         class="label {{ type.type.name | lowercase }}"
+    >
+      {{ type.type.name | capitalize }}
+    </div>
+  </div>
+</div>
