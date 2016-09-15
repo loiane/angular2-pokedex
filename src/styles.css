@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/materialize-css/dist/css/materialize.css";
+
+.pokemon {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.05);
+  margin: 10px 0;
+}
