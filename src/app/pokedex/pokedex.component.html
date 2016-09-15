@@ -1,0 +1,32 @@
+    <div class="nav-wrapper">
+      <form class="pokemon-search">
+        <div class="input-field">
+          <input name="searchQuery" type="search" required [(ngModel)]="searchQuery">
+          <label for="searchQuery"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+<div class="count">
+  <span>Showing <span class="count-badge">151</span> Pokémons</span>
+</div>
+<div class="container">
+  <div *ngIf="!pokemonList.length"
+    class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-red-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="pokemonList.length">
+    <div class="col s12 m6 l4"
+         *ngFor="let pokemon of getPokemons()">
+      <app-pokedex-item [pokemon]="pokemon"></app-pokedex-item>
+    </div>
+  </div>
+</div>

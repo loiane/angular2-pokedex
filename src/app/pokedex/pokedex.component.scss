@@ -1,0 +1,26 @@
+.app-pokedex {
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+.pokemon-search {
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.count {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+.count-badge {
+  @extend .count;
+  background-color: lighten(#FF6666, 10%);
+  border-radius: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-weight: bold;
+}
+
