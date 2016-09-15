@@ -1,0 +1,41 @@
+<div class="card-panel white">
+<div style="padding-top: 15px">
+  <app-pokemon-header [pokemon]="pokemon"></app-pokemon-header>
+  <app-pokemon-image [pokemon]="pokemon"></app-pokemon-image>
+</div>
+
+  <div *ngIf="this.pokemon.types" class="types">
+    <div *ngFor="let type of this.pokemon.types"
+         class="label {{ type.type.name | lowercase }}"
+    >
+      {{ type.type.name | capitalize }}
+    </div>
+  </div>
+
+<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
+  <li>
+    <div class="collapsible-header">Pokédex</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header">Type Effectiveness</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header">Stats</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header">Evolution</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header">Sprites</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header">Moves</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+</ul>
+</div>
