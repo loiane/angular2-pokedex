@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { routing } from './app.routing';
 
-import { MaterializeModule } from 'angular2-materialize';
+//import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,7 +22,7 @@ import { PokedexModule } from './pokedex/pokedex.module';
     FormsModule,
     HttpModule,
     routing,
-    MaterializeModule,
+    //MaterializeModule,
     PokedexModule
   ],
   providers: [PokedexService],
