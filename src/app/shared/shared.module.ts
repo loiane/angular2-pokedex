@@ -5,20 +5,25 @@ import { FormsModule } from '@angular/forms';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { PokemonNumberPipe } from './pipes/pokemon-number.pipe';
 import { ImageifyPipe } from './pipes/imageify.pipe';
+import { UtilitiesService } from './utilities.service';
+import { DivBy10Pipe } from './pipes/div-by-10.pipe';
+import { PokemonGenderPipe } from './pipes/pokemon-gender.pipe';
 
-const pipes = [
+export const sharedPipes = [
   CapitalizePipe,
   PokemonNumberPipe,
-  ImageifyPipe
+  ImageifyPipe,
+  DivBy10Pipe,
+  PokemonGenderPipe
+];
+
+export const sharedProviders = [
+  UtilitiesService
 ];
 
 @NgModule({
   imports: [ CommonModule, FormsModule ],
-  declarations: [
-    pipes
-  ],
-  exports: [
-    pipes
-  ]
+  declarations: [ sharedPipes ],
+  exports: [ sharedPipes ]
 })
 export class SharedModule { }

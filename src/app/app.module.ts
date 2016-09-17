@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PokedexService } from './pokedex/pokedex.service';
 import { PokedexModule } from './pokedex/pokedex.module';
+import { SharedModule, sharedProviders, sharedPipes} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,14 @@ import { PokedexModule } from './pokedex/pokedex.module';
     FormsModule,
     HttpModule,
     routing,
+    SharedModule,
     //MaterializeModule,
     PokedexModule
   ],
-  providers: [PokedexService],
+  providers: [
+    PokedexService,
+    sharedProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
