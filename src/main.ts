@@ -5,8 +5,8 @@ import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
 import { AppModule } from './app/';
 
-import "materialize-css";
-import "angular2-materialize";
+//import "materialize-css";
+//import "angular2-materialize";
 
 if (environment.production) {
   enableProdMode();
