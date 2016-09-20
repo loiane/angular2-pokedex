@@ -1,0 +1,13 @@
+.stats {
+  width: 80%;
+
+  th {
+    width: 1px;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .num, .num-total {
+    text-align: right;
+  }
+}
