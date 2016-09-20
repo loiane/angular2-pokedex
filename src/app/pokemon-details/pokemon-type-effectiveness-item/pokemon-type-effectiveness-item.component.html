@@ -1,0 +1,19 @@
+<p><strong>{{ text }}</strong></p>
+<div class="container">
+  <div class="row" *ngIf="list.length > 0">
+    <div class="col s6 m2" *ngFor="let type of list">
+        <span class="label-fixed-width {{ type.name | lowercase }}"
+              style="font-size:12px;">
+          {{ type.name | capitalize }}
+        </span>
+    </div>
+  </div>
+  <div class="row" *ngIf="list.length === 0">
+    <div class="col s6 m2">
+      <span class="label-fixed-width none" style="font-size:12px;">
+        None
+      </span>
+    </div>
+  </div>
+</div>
+
