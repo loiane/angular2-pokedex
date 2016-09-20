@@ -1,0 +1,9 @@
+<tr>
+  <th><strong class="left">{{ text }}</strong></th>
+  <td class="cell-barchart">
+    <div *ngIf="classValue !== ''"
+         [style.width]="(value-20) +'%'"
+         class="progress {{ classValue }}"></div>
+  </td>
+  <td class="num">{{ value }}</td>
+</tr>
