@@ -1,3 +1,45 @@
-<p>
-  pokemon-species works!
-</p>
+<div *ngIf="speciesDetails">
+  <p><strong>{{ speciesName }} Pokémon</strong></p>
+  <p style="padding-left:15px;padding-right:15px;">
+    {{ description }}
+  </p>
+  <ul class="collection">
+    <li class="collection-item">
+      <strong>Height: </strong>{{ pokemon.height | divBy10 }} m
+    </li>
+    <li class="collection-item">
+      <strong>Weight: </strong>{{ pokemon.weight | divBy10 }} kg
+    </li>
+    <li class="collection-item">
+      <strong>Base EXP: </strong>{{ pokemon.base_experience }}
+    </li>
+    <li class="collection-item">
+      <strong>Catch rate: </strong>{{ speciesDetails.capture_rate }}
+    </li>
+    <li class="collection-item">
+      <strong>Base Happiness: </strong>{{ speciesDetails.base_happiness }}
+    </li>
+    <li class="collection-item">
+      <strong>Egg Groups: </strong>
+      <span *ngFor="let egg of speciesDetails.egg_groups; let i = index">
+        {{ egg.name | capitalize }}
+        <span *ngIf="i !== speciesDetails.egg_groups.length-1">
+        ,
+        </span>
+      </span>
+    </li>
+    <li class="collection-item">
+      <strong>Gender: </strong>{{ speciesDetails.gender_rate | pokemonGender }}
+    </li>
+    <li class="collection-item">
+      <strong>Abilities: </strong>
+      <ul class="collection">
+        <li *ngFor="let ability of getPokemonAbilities()"
+            class="collection-item" >
+          {{ ability?.ability?.name | capitalize }}
+          <span *ngIf="ability.is_hidden">(Hidden Ability)</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
