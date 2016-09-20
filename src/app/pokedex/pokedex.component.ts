@@ -17,7 +17,10 @@ export class PokedexComponent implements OnInit {
 
   ngOnInit(){
     this.pokedexService.getAllPokemon()
-      .subscribe(pokemonList => this.pokemonList = pokemonList);
+      .subscribe(pokemonList => {
+        this.pokemonList = pokemonList;
+        this.pokedexService.initData();
+      });
   }
 
   getPokemons(){
@@ -31,6 +34,10 @@ export class PokedexComponent implements OnInit {
       }
       return false;
     });
+  }
+
+  onClearSearch(){
+    this.searchQuery = '';
   }
 
 }
