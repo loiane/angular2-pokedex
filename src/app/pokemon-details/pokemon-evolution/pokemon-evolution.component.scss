@@ -1,0 +1,38 @@
+@import "../../app.component";
+
+.container-evolution {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.evolution {
+  width: 130px;
+  height: 160px;
+  margin-top: 20px;
+  border-radius: 5px;
+  color: black;
+
+  img {
+    width: 100%;
+    height: 110px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+  }
+
+  .level {
+    height: 15px;
+    margin-top: 5px;
+    margin-top: 3px;
+    font-size: 1em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="container-evolution">
+  <div *ngFor="let evolution of evolutions"
+       class="evolution {{ pokemon.types[0]?.type.name }}-evolution">
+    <img src="{{ evolution.id | imageify }}"
+         alt="{{ evolution.name }}">
+    <div class="level">
+      <strong>{{ evolution.name | capitalize }}</strong>
+      (#{{ evolution.id | pokemonNumber }})
+    </div>
+    <div class="level">Level {{ evolution.level }}</div>
+  </div>
+</div>
