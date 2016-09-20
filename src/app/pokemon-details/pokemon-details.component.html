@@ -1,41 +1,79 @@
-<div class="card-panel white">
+<div class="card-panel white" *ngIf="pokemon">
 <div style="padding-top: 15px">
   <app-pokemon-header [pokemon]="pokemon"></app-pokemon-header>
   <app-pokemon-image [pokemon]="pokemon"></app-pokemon-image>
 </div>
 
-  <div *ngIf="this.pokemon.types" class="types">
-    <div *ngFor="let type of this.pokemon.types"
+  <div *ngIf="pokemon.types" class="types">
+    <div *ngFor="let type of pokemon.types"
          class="label {{ type.type.name | lowercase }}"
     >
       {{ type.type.name | capitalize }}
     </div>
   </div>
 
-<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
+<!--ul materialize="collapsible" class="collapsible" data-collapsible="accordion" popout>
   <li>
-    <div class="collapsible-header">Pokédex</div>
+    <div class="collapsible-header">
+      <p>Pokédex, Training and Breeding</p>
+    </div>
+    <div class="collapsible-body">
+      <app-pokemon-species [pokemon]="pokemon"></app-pokemon-species>
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <p>Type Effectiveness</p>
+    </div>
     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
   </li>
   <li>
-    <div class="collapsible-header">Type Effectiveness</div>
+    <div class="collapsible-header"><p>Stats</p></div>
     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
   </li>
   <li>
-    <div class="collapsible-header">Stats</div>
+    <div class="collapsible-header"><p>Evolution</p></div>
     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
   </li>
   <li>
-    <div class="collapsible-header">Evolution</div>
+    <div class="collapsible-header"><p>Sprites</p></div>
     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
   </li>
   <li>
-    <div class="collapsible-header">Sprites</div>
+    <div class="collapsible-header"><p>Moves</p></div>
     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
   </li>
-  <li>
-    <div class="collapsible-header">Moves</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-</ul>
+</ul-->
+  <div class="container">
+  <div class="row">
+    <div class="col s12">
+      <ul materialize class="tabs">
+        <ul class="tabs" materialize="tabs">
+          <li class="tab col s3"><a class="active" href="#pokedex">Pokédex</a></li>
+          <li class="tab col s3"><a href="#stats">Stats</a></li>
+          <li class="tab col s3"><a href="#type">Effectiveness</a></li>
+          <li class="tab col s3"><a href="#evolution">Evolution</a></li>
+          <li class="tab col s3"><a href="#sprites">Sprites</a></li>
+          <li class="tab col s3"><a href="#moves">Moves</a></li>
+        </ul>
+      </ul>
+    </div>
+    <div id="pokedex" class="col s12">
+      <app-pokemon-species [pokemon]="pokemon"></app-pokemon-species>
+    </div>
+    <div id="stats" class="col s12">
+      <app-pokemon-stats [pokemon]="pokemon"></app-pokemon-stats>
+    </div>
+    <div id="type" class="col s12">
+      <app-pokemon-type-effectiveness [pokemon]="pokemon"></app-pokemon-type-effectiveness>
+    </div>
+    <div id="evolution" class="col s12">
+      <app-pokemon-evolution [pokemon]="pokemon"></app-pokemon-evolution>
+    </div>
+    <div id="sprites" class="col s12">
+      <app-pokemon-sprites [pokemon]="pokemon"></app-pokemon-sprites>
+    </div>
+    <div id="moves" class="col s12">Test 5</div>
+  </div>
+  </div>
 </div>
